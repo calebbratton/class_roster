@@ -1,4 +1,5 @@
 #include "Student.h"
+#include <iostream>
 
 using namespace std;
 
@@ -75,17 +76,7 @@ DegreeProgram Student::getDegree()
   return degreeProgram;
 }
 
-string Student::getDegreeString()
+void Student::print()
 {
-  switch (degreeProgram)
-  {
-  case SECURITY:
-    return "Security";
-  case NETWORK:
-    return "Network";
-  case SOFTWARE:
-    return "Software";
-  default:
-    return "Invalid Degree Type";
-  }
+  cout << studentID << "\t First Name : " << firstName << "\t Last Name : " << lastName << "\t Age : " << age << "\t daysInCourse : {" << daysToComplete.at(0) << "," << daysToComplete.at(1) << "," << daysToComplete.at(2) << "}\t Degree Program : " << getDegreeString(getDegree()) << endl;
 }

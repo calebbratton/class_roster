@@ -22,9 +22,22 @@ public:
   void setDaysToComplete(vector<int> dtc);
   vector<int> getDaysToComplete();
   void setDegree(DegreeProgram degree);
-  string getDegreeString();
+  static string getDegreeString(DegreeProgram dp)
+  {
+    switch (dp)
+    {
+    case SECURITY:
+      return "Security";
+    case NETWORK:
+      return "Network";
+    case SOFTWARE:
+      return "Software";
+    default:
+      return "Invalid Degree Type";
+    }
+  }
   DegreeProgram getDegree();
-  // void Print(string itemToPrint);
+  void print();
 
 private:
   string studentID;
