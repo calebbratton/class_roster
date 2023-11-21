@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Student::Student(string id, string fName, string lName, string initEmail, int initAge, vector<int> dtc, string degree)
+Student::Student(string id, string fName, string lName, string initEmail, int initAge, vector<int> dtc, DegreeProgram degree)
 {
   studentID = id;
   firstName = fName;
@@ -39,7 +39,7 @@ void Student::SetDaysToComplete(vector<int> dtc)
   daysToComplete = dtc;
 }
 
-void Student::SetDegree(string degree)
+void Student::SetDegree(DegreeProgram degree)
 {
   degreeProgram = degree;
 }
@@ -72,5 +72,15 @@ vector<int> Student::GetDaysToComplete()
 
 string Student::GetDegree()
 {
-  return degreeProgram;
+  switch (degreeProgram)
+  {
+  case SECURITY:
+    return "Security";
+  case NETWORK:
+    return "Network";
+  case SOFTWARE:
+    return "Software";
+  default:
+    return "Invalid Degree Type"
+  }
 }
