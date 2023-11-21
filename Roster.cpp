@@ -1,11 +1,18 @@
 #include "Roster.h"
 
-vector<string> Roster::GetRoster();
-void Roster::Add(string initId, string fName, string lName, string initEmail, int initAge, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degree)
+using namespace std;
+
+vector<string> Roster::getRoster()
 {
-  Student student(initId, fName, lName, initEmail, initAge, vector<int>{daysInCourse1, daysInCourse2, daysInCourse3}, degree);
-  classRosterArray.push_back(student &);
+  return classRosterArray;
 };
+
+void Roster::add(string initId, string fName, string lName, string initEmail, int initAge, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degree)
+{
+  Student *student = new Student(initId, fName, lName, initEmail, initAge, vector<int>{daysInCourse1, daysInCourse2, daysInCourse3}, degree);
+  classRosterArray.push_back(student);
+};
+
 void Roster::remove(string id)
 {
   unsigned int i = 0;
@@ -19,7 +26,42 @@ void Roster::remove(string id)
     ++i;
   }
 };
-void Roster::printAll();
-void Roster::printAverageDaysInCourse(string studentID);
-void Roster::PrintInvalidEmails();
-void Roster::PrintByDegreeProgram(DegreeProgram degreeProgram);
+
+void Roster::printAll()
+{
+  for (Student *student : classRosterArray)
+  {
+    cout << *student.getFirstName();
+  }
+}
+
+void Roster::printAverageDaysInCourse(string studentID)
+{
+  for (Student *student : classRosterArray)
+  {
+    if (student.getStudentID() == studentID)
+    {
+      cout << sum(student.getDaysToComplete()) / student.getDaysToComplete().size() << endl;
+      break;
+    }
+  }
+};
+void Roster::printInvalidEmails(){
+
+};
+
+void checkEmail(string email)
+{
+}
+
+void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
+{
+  for (Student *student : classRosterArray)
+  {
+    if (student.getDegree() == degreeProgram)
+    {
+      cout << sum(student.getDaysToComplete()) / student.getDaysToComplete().size() << endl;
+      break;
+    }
+  }
+};

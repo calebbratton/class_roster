@@ -14,63 +14,68 @@ Student::Student(string id, string fName, string lName, string initEmail, int in
 }
 
 // setters
-void Student::SetStudentID(string id)
+void Student::setStudentID(string id)
 {
   studentID = id;
 }
 
-void Student::SetFirstName(string fName)
+void Student::setFirstName(string fName)
 {
   firstName = fName;
 }
 
-void Student::SetLastName(string lName)
+void Student::setLastName(string lName)
 {
   lastName = lName;
 }
 
-void Student::SetEmail(string initEmail)
+void Student::setEmail(string initEmail)
 {
   email = initEmail;
 }
 
-void Student::SetDaysToComplete(vector<int> dtc)
+void Student::setDaysToComplete(vector<int> dtc)
 {
   daysToComplete = dtc;
 }
 
-void Student::SetDegree(DegreeProgram degree)
+void Student::setDegree(DegreeProgram degree)
 {
   degreeProgram = degree;
 }
 
 // getters
-string Student::GetStudentID()
+string Student::getStudentID()
 {
   return studentID;
 }
 
-string Student::GetFirstName()
+string Student::getFirstName()
 {
   return firstName;
 }
 
-string Student::GetLastName()
+string Student::getLastName()
 {
   return lastName;
 }
 
-string Student::GetEmail()
+string Student::getEmail()
 {
   return email;
 }
 
-vector<int> Student::GetDaysToComplete()
+vector<int> Student::getDaysToComplete()
 {
   return daysToComplete;
 }
 
-string Student::GetDegree()
+DegreeProgram Student::getDegree()
+{
+  return degreeProgram;
+}
+
+string Student::getDegreeString()
 {
   switch (degreeProgram)
   {
@@ -81,6 +86,6 @@ string Student::GetDegree()
   case SOFTWARE:
     return "Software";
   default:
-    return "Invalid Degree Type"
+    return "Invalid Degree Type";
   }
 }

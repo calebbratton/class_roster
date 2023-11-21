@@ -6,6 +6,6 @@ enum DegreeProgram
   SECURITY,
   NETWORK,
   SOFTWARE
-}
+};
 
 #endif
