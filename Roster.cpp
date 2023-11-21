@@ -4,6 +4,16 @@
 
 using namespace std;
 
+Roster::~Roster()
+{
+  for (size_t i = 0; i < classRosterArray.size(); ++i)
+  {
+    delete classRosterArray[i];
+  }
+
+  classRosterArray.clear();
+}
+
 vector<Student *> Roster::getRoster()
 {
   return classRosterArray;
