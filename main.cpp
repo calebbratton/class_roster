@@ -1,5 +1,5 @@
-#include "Roster.h"
-#include "Degree.h"
+#include "./src/Roster.h"
+#include "./src/Degree.h"
 #include <iostream>
 #include <sstream>
 
@@ -52,5 +52,6 @@ int main()
   classRoster.printAll();
 
   classRoster.remove("A3");
+
   return 0;
 }

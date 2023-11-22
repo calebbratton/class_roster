@@ -1,6 +1,5 @@
 #include "Roster.h"
 #include <iostream>
-#include <numeric>
 
 using namespace std;
 
@@ -33,9 +32,8 @@ void Roster::add(string initId, string fName, string lName, string initEmail, in
 
 void Roster::remove(string id)
 {
-  unsigned int i = 0;
   bool found = false;
-  while (i < classRosterArray.size() - 1)
+  for (size_t i = 0; i < classRosterArray.size(); ++i)
   {
     Student *student = classRosterArray.at(i);
     if (student->getStudentID() == id)
@@ -45,7 +43,6 @@ void Roster::remove(string id)
       found = true;
       break;
     }
-    ++i;
   }
   if (!found)
   {
@@ -70,9 +67,9 @@ void Roster::printAverageDaysInCourse(string studentID)
     {
       int sum = 0;
       vector<int> dtc = student->getDaysToComplete();
-      for (int i = 0; i < dtc.size(); ++i)
+      for (int d : dtc)
       {
-        sum += dtc.at(i);
+        sum += d;
       }
 
       cout << student->getFirstName() << " " << student->getLastName() << "'s Average Days In Course: " << sum / dtc.size() << endl;
