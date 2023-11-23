@@ -7,7 +7,7 @@ Roster::~Roster()
 {
   for (size_t i = 0; i < classRosterArray.size(); ++i)
   {
-    delete classRosterArray[i];
+    delete classRosterArray.at(i);
   }
 
   classRosterArray.clear();
@@ -41,6 +41,7 @@ void Roster::remove(string id)
       delete student;
       classRosterArray.erase(classRosterArray.begin() + i);
       found = true;
+      cout << "Removed student with ID: " << id << endl;
       break;
     }
   }

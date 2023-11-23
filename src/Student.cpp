@@ -78,5 +78,5 @@ DegreeProgram Student::getDegree()
 
 void Student::print()
 {
-  cout << studentID << "\t First Name : " << firstName << "\t Last Name : " << lastName << "\t Age : " << age << "\t daysInCourse : {" << daysToComplete.at(0) << "," << daysToComplete.at(1) << "," << daysToComplete.at(2) << "}\t Degree Program : " << getDegreeString(getDegree()) << endl;
+  cout << studentID << "\t First Name : " << firstName << "\t Last Name : " << lastName << "\t Age : " << age << "\t daysInCourse : {" << daysToComplete.at(0) << ", " << daysToComplete.at(1) << ", " << daysToComplete.at(2) << "}\t Degree Program : " << getDegreeString(getDegree()) << endl;
 }
